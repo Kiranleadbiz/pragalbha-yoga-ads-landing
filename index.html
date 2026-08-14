@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Free Trial Yoga Class — Pragalbha Yoga, Sahakar Nagar</title>
+<meta name="description" content="Claim your free trial class at Pragalbha Yoga, Sahakar Nagar. 30 minutes, no experience needed, real results close to home." />
+<meta property="og:title" content="Find peace and strength in your busy day — Pragalbha Yoga" />
+<meta property="og:description" content="30 minutes. No experience needed. Real results, close to home. Claim your free trial class." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" />
+<style>
+  :root {
+    --clay: #2b1f16;
+    --sand: #f0e6d8;
+    --sand-deep: #e3d5c0;
+    --terracotta: #c4806a;
+    --terracotta-deep: #a8664f;
+    --gold: #c9a05a;
+    --muted: #6b5a49;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--sand);
+    color: var(--clay);
+    font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.006em;
+    padding-bottom: 76px;
+  }
+  h1, h2, h3 {
+    font-family: "Newsreader", ui-serif, Georgia, serif;
+    font-weight: 440;
+    letter-spacing: -0.015em;
+    line-height: 1.02;
+  }
+  em { font-style: italic; }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; -webkit-user-drag: none; }
+  ::selection { background: var(--terracotta); color: var(--sand); }
+
+  .container { max-width: 78rem; margin-inline: auto; width: 100%; padding-inline: 1.5rem; }
+  @media (min-width: 768px) { .container { padding-inline: 3rem; } }
+
+  .section { padding-block: 5rem; }
+  @media (min-width: 768px) { .section { padding-block: 7rem; } }
+
+  .on-dark { background: var(--clay); color: var(--sand); }
+
+  .eyebrow {
+    font-family: "DM Mono", ui-monospace, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .eyebrow.center { justify-content: center; }
+  .rule { display: inline-block; width: 2.5rem; height: 1px; background: var(--gold); }
+
+  .btn-primary, .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.9rem 1.6rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    border-radius: 999px;
+    cursor: pointer;
+    border: none;
+    transition: background 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease, color 0.25s ease;
+  }
+  .btn-primary {
+    background: var(--terracotta);
+    color: var(--sand);
+  }
+  .btn-primary:hover {
+    background: var(--terracotta-deep);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px -8px rgba(196, 128, 106, 0.6);
+  }
+  .btn-outline {
+    border: 1px solid currentColor;
+    color: inherit;
+    background: transparent;
+  }
+  .btn-outline:hover { background: currentColor; color: var(--clay); }
+
+  .hero { position: relative; overflow: hidden; }
+  .hero-grid {
+    display: grid;
+    gap: 3rem;
+    padding-block: 6rem 5rem;
+  }
+  @media (min-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr 1fr; align-items: center; padding-block: 8rem 6rem; }
+  }
+  .hero h1 { font-size: 2.75rem; margin-top: 1.5rem; }
+  @media (min-width: 900px) { .hero h1 { font-size: 4.2rem; } }
+  .hero p.sub { margin-top: 1.5rem; max-width: 28rem; font-size: 1.15rem; line-height: 1.6; color: rgba(240,230,216,0.75); }
+  .hero-actions { margin-top: 2.5rem; display: flex; flex-wrap: wrap; gap: 1rem; }
+  .hero-photo { position: relative; border-radius: 4px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
+  .hero-photo img { width: 100%; height: 420px; object-fit: cover; }
+  @media (min-width: 900px) { .hero-photo img { height: 560px; } }
+  .hero-badge {
+    position: absolute; bottom: 1.5rem; left: 1.5rem;
+    background: var(--sand); color: var(--clay);
+    border-radius: 999px; padding: 0.6rem 1.1rem;
+    font-family: "DM Mono", monospace; font-size: 0.72rem;
+    letter-spacing: 0.15em; text-transform: uppercase;
+  }
+
+  .stats {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 0;
+    border-top: 1px solid rgba(43,31,22,0.1); border-bottom: 1px solid rgba(43,31,22,0.1);
+    margin-top: 3.5rem;
+  }
+  @media (min-width: 768px) { .stats { grid-template-columns: repeat(4, 1fr); } }
+  .stat { padding: 2rem 0; }
+  @media (min-width: 768px) { .stat { padding: 2rem 2rem; border-left: 1px solid rgba(43,31,22,0.1); } }
+  .stat:first-child { border-left: none; }
+  .stat .num { font-family: "Newsreader", serif; font-size: 2.4rem; color: var(--terracotta); }
+  @media (min-width: 768px) { .stat .num { font-size: 2.8rem; } }
+  .stat .label { margin-top: 0.4rem; font-family: "DM Mono", monospace; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+
+  .offer { text-align: center; max-width: 42rem; margin-inline: auto; }
+  .offer h2 { font-size: 2.8rem; margin-top: 1.5rem; }
+  @media (min-width: 768px) { .offer h2 { font-size: 3.6rem; } }
+  .offer p { margin-top: 1.5rem; font-size: 1.1rem; line-height: 1.65; color: var(--muted); }
+  .offer .fine { margin-top: 1rem; font-size: 0.78rem; color: rgba(43,31,22,0.5); }
+
+  h2.section-title { font-size: 2.4rem; margin-top: 1.5rem; }
+  @media (min-width: 768px) { h2.section-title { font-size: 3rem; } }
+
+  .styles-grid { margin-top: 3.5rem; display: grid; gap: 1.5rem; grid-template-columns: 1fr 1fr; }
+  @media (min-width: 900px) { .styles-grid { grid-template-columns: repeat(4, 1fr); } }
+  .style-card { border: 1px solid rgba(255,255,255,0.1); background: #362a1e; overflow: hidden; transition: transform 0.4s cubic-bezier(.16,1,.3,1); }
+  .style-card:hover { transform: translateY(-4px); }
+  .style-card .photo { aspect-ratio: 4 / 3; overflow: hidden; }
+  .style-card .photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; }
+  .style-card:hover .photo img { transform: scale(1.05); }
+  .style-card .body { padding: 1.5rem; }
+  .style-card h3 { font-size: 1.4rem; }
+  .style-card p { margin-top: 0.6rem; font-size: 0.9rem; line-height: 1.5; color: rgba(240,230,216,0.7); }
+
+  .testimonials { margin-top: 3.5rem; display: grid; gap: 1.5rem; }
+  @media (min-width: 900px) { .testimonials { grid-template-columns: repeat(3, 1fr); } }
+  .t-card { border: 1px solid rgba(43,31,22,0.15); padding: 2rem; display: flex; flex-direction: column; height: 100%; transition: transform 0.4s cubic-bezier(.16,1,.3,1); }
+  .t-card:hover { transform: translateY(-4px); }
+  .t-card blockquote { flex: 1; font-family: "Newsreader", serif; font-style: italic; font-size: 1.2rem; line-height: 1.6; }
+  .t-card figcaption { margin-top: 1.5rem; border-top: 1px solid rgba(43,31,22,0.1); padding-top: 1rem; font-family: "DM Mono", monospace; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); }
+
+  .faq { max-width: 42rem; margin-inline: auto; }
+  .faq-item { border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .faq-q {
+    width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    padding: 1.25rem 0; font-family: "Newsreader", serif; font-size: 1.15rem; color: var(--sand);
+  }
+  .faq-q .chev { transition: transform 0.2s ease; flex-shrink: 0; }
+  .faq-item.open .faq-q .chev { transform: rotate(180deg); }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+  .faq-a-inner { padding-bottom: 1.25rem; font-size: 0.95rem; line-height: 1.6; color: rgba(240,230,216,0.7); }
+  .faq-item.open .faq-a { max-height: 200px; }
+
+  .final-grid { display: grid; gap: 3.5rem; }
+  @media (min-width: 900px) { .final-grid { grid-template-columns: 5fr 7fr; } }
+  .final-grid h2 { font-size: 2.8rem; margin-top: 1.5rem; }
+  @media (min-width: 768px) { .final-grid h2 { font-size: 3.4rem; } }
+  .final-grid p { margin-top: 1.5rem; font-size: 1.05rem; line-height: 1.6; color: var(--muted); }
+
+  form.lead-form { display: grid; gap: 1rem; max-width: 26rem; }
+  .lead-form input {
+    width: 100%; border-radius: 6px; border: 1px solid rgba(43,31,22,0.2);
+    background: transparent; padding: 0.85rem 1rem; font-size: 0.9rem; color: var(--clay);
+    font-family: inherit; outline: none; transition: border-color 0.2s ease;
+  }
+  .lead-form input::placeholder { color: rgba(43,31,22,0.4); }
+  .lead-form input:focus { border-color: var(--terracotta); }
+  .lead-form .note { text-align: center; font-size: 0.75rem; color: rgba(43,31,22,0.6); }
+  .divider { display: flex; align-items: center; gap: 1rem; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(43,31,22,0.4); margin-block: 0.25rem; }
+  .divider .line { flex: 1; height: 1px; background: rgba(43,31,22,0.15); }
+
+  footer.site-footer { background: var(--clay); color: var(--sand); padding-block: 3rem; text-align: center; }
+  footer.site-footer .brand { font-family: "Newsreader", serif; font-size: 1.5rem; }
+  footer.site-footer .tagline { margin-top: 0.5rem; font-family: "DM Mono", monospace; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(240,230,216,0.6); }
+
+  .whatsapp-float {
+    position: fixed; bottom: 92px; right: 1.5rem; z-index: 50;
+    width: 3.5rem; height: 3.5rem; border-radius: 999px;
+    background: #25D366; color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 12px 24px -8px rgba(0,0,0,0.3);
+    transition: transform 0.15s ease;
+  }
+  .whatsapp-float:hover { transform: scale(1.1); }
+  @media (min-width: 768px) { .whatsapp-float { bottom: 1.5rem; } }
+
+  .sticky-bar {
+    position: fixed; inset-inline: 0; bottom: 0; z-index: 50;
+    background: var(--clay); color: var(--sand);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    padding: 1rem 1.25rem;
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+  @media (min-width: 768px) { .sticky-bar { display: none; } }
+  .sticky-bar .txt .title { font-size: 0.9rem; font-weight: 500; }
+  .sticky-bar .txt .sub { font-size: 0.8rem; color: rgba(240,230,216,0.6); }
+  .sticky-bar .actions { display: flex; align-items: center; gap: 0.75rem; }
+  .sticky-bar .wa {
+    width: 2.5rem; height: 2.5rem; border-radius: 999px; background: #25D366; color: #fff;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .sticky-bar .btn-primary { padding: 0.7rem 1.2rem; font-size: 0.78rem; }
+
+  @media (max-width: 767px) { body { padding-bottom: 84px; } }
+</style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero on-dark">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow"><span class="rule"></span>Sahakar Nagar, Bengaluru</div>
+        <h1>Find peace and strength in your busy day.</h1>
+        <p class="sub">30 minutes. No experience needed. Real results, close to home.</p>
+        <div class="hero-actions">
+          <a href="#lead-form" class="btn-primary">Claim Your Free Trial Class</a>
+          <a href="https://wa.me/919980066922" target="_blank" rel="noreferrer" class="btn-outline">Chat on WhatsApp</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="assets/hero-home.jpg" alt="Warm Pragalbha Yoga studio interior in golden light" width="1600" height="1200" />
+        <div class="hero-badge">Begin today. Feel calm.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST & AUTHORITY -->
+  <section class="section" style="padding-bottom: 0;">
+    <div class="container">
+      <div class="eyebrow"><span class="rule"></span>Why Pragalbha</div>
+      <h2 class="section-title">Real instructors. Real experience.</h2>
+      <div class="stats">
+        <div class="stat"><div class="num">16+</div><div class="label">Years guided practice</div></div>
+        <div class="stat"><div class="num">100+</div><div class="label">Students in our community</div></div>
+        <div class="stat"><div class="num">6</div><div class="label">Certified instructors</div></div>
+        <div class="stat"><div class="num">YA</div><div class="label">Yoga Alliance aligned</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE OFFER -->
+  <section class="section">
+    <div class="container">
+      <div class="offer">
+        <div class="eyebrow center"><span class="rule"></span>The Offer</div>
+        <h2>Your first class is free.</h2>
+        <p>No commitment, no pressure — just come see what a class actually feels like. Bring yourself; we'll handle the rest.</p>
+        <a href="#lead-form" class="btn-primary" style="margin-top: 2rem;">Claim Your Free Trial Class</a>
+        <p class="fine">Limited to 20 new sign-ups this month</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLASS STYLES -->
+  <section class="section on-dark">
+    <div class="container">
+      <div class="eyebrow"><span class="rule"></span>Class Styles</div>
+      <h2 class="section-title">Find your practice.</h2>
+      <div class="styles-grid">
+        <div class="style-card">
+          <div class="photo"><img src="assets/group-classes.jpg" alt="Hatha Yoga" /></div>
+          <div class="body"><h3>Hatha Yoga</h3><p>Slow, steady, foundational. Perfect if you're just starting out.</p></div>
+        </div>
+        <div class="style-card">
+          <div class="photo"><img src="assets/hero-home.jpg" alt="Beginner Yoga" /></div>
+          <div class="body"><h3>Beginner Yoga</h3><p>Zero experience required. We guide every single pose.</p></div>
+        </div>
+        <div class="style-card">
+          <div class="photo"><img src="assets/ttc.jpg" alt="Power Vinyasa" /></div>
+          <div class="body"><h3>Power Vinyasa</h3><p>Build strength and break a sweat, one flowing sequence at a time.</p></div>
+        </div>
+        <div class="style-card">
+          <div class="photo"><img src="assets/aerial.jpg" alt="Aerial Yoga" /></div>
+          <div class="body"><h3>Aerial Yoga</h3><p>Suspended, supported, surprisingly calm. Our signature class.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section class="section">
+    <div class="container">
+      <div class="eyebrow"><span class="rule"></span>Real Students</div>
+      <h2 class="section-title">Real results.</h2>
+      <div class="testimonials">
+        <figure class="t-card">
+          <blockquote>"The vibe here is unmatched — I look forward to class every day."</blockquote>
+          <figcaption>— Vinutha N.</figcaption>
+        </figure>
+        <figure class="t-card">
+          <blockquote>"The teachers are really good at their job. Every class feels personal."</blockquote>
+          <figcaption>— Feta M.V.</figcaption>
+        </figure>
+        <figure class="t-card">
+          <blockquote>"I've felt a real difference in my flexibility and overall well-being."</blockquote>
+          <figcaption>— Manjunatha S.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section on-dark">
+    <div class="container">
+      <div class="faq">
+        <div class="eyebrow center"><span class="rule"></span>Questions</div>
+        <h2 class="section-title" style="text-align:center;">Before you start.</h2>
+        <div style="margin-top: 3rem;">
+          <div class="faq-item">
+            <button class="faq-q" type="button">What do I need to bring?<span class="chev">▾</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Just water and comfortable clothes. We provide mats and props.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">I'm not flexible at all — can I still join?<span class="chev">▾</span></button>
+            <div class="faq-a"><div class="faq-a-inner">That's exactly why people start. Flexibility is a result of practice, not a requirement for it.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">Do I need experience?<span class="chev">▾</span></button>
+            <div class="faq-a"><div class="faq-a-inner">None. Most of our beginners have never done yoga before their first class here.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">What if I can't make it every week?<span class="chev">▾</span></button>
+            <div class="faq-a"><div class="faq-a-inner">No problem — drop in whenever your schedule allows. No long-term lock-in required.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">How do I book my free class?<span class="chev">▾</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Fill in the short form below or message us on WhatsApp — we'll confirm your slot within a few hours.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA / LEAD FORM -->
+  <section class="section">
+    <div class="container final-grid">
+      <div>
+        <div class="eyebrow"><span class="rule"></span>Last Step</div>
+        <h2>Ready to feel different?</h2>
+        <p>Fill in your details and we'll confirm your free trial slot — or message us directly on WhatsApp.</p>
+      </div>
+      <div>
+        <form class="lead-form" id="lead-form">
+          <input name="name" required placeholder="Name" />
+          <input name="phone" required placeholder="Phone Number" />
+          <input name="email" type="email" placeholder="Email" />
+          <button type="submit" class="btn-primary" id="lead-submit">Claim My Free Trial Class</button>
+          <p class="note">We'll reply within a few hours — no spam, ever.</p>
+          <div class="divider"><span class="line"></span>or<span class="line"></span></div>
+          <a href="https://wa.me/919980066922" target="_blank" rel="noreferrer" class="btn-outline" style="border-color: rgba(43,31,22,0.3);">Chat with us on WhatsApp →</a>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="brand">Pragalbha Yoga</div>
+    <div class="tagline">Sahakar Nagar, Bengaluru · Premium · Authentic · Transformative</div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a class="whatsapp-float" href="https://wa.me/919980066922" target="_blank" rel="noreferrer" aria-label="Chat with us on WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.92C21.96 6.45 17.5 2 12.04 2Zm5.83 14.19c-.25.7-1.23 1.28-2 1.44-.55.11-1.26.2-3.66-.79-2.98-1.23-4.9-4.24-5.05-4.44-.15-.2-1.2-1.6-1.2-3.05 0-1.46.75-2.17 1.03-2.46.25-.27.61-.4.94-.4h.34c.29 0 .49 0 .7.5.25.6.85 2.06.92 2.21.07.15.12.32.02.52-.09.2-.14.33-.28.5-.14.17-.29.38-.42.51-.14.14-.28.29-.13.57.15.28.66 1.09 1.42 1.77 1 .87 1.83 1.15 2.11 1.28.28.13.44.11.6-.07.17-.17.72-.83.91-1.12.19-.28.38-.24.63-.14.26.09 1.63.77 1.9.91.28.14.46.21.53.33.07.12.07.7-.18 1.4Z"/></svg>
+  </a>
+
+  <!-- Sticky mobile bar -->
+  <div class="sticky-bar">
+    <div class="txt">
+      <div class="title">Free Trial Class</div>
+      <div class="sub">No commitment</div>
+    </div>
+    <div class="actions">
+      <a class="wa" href="https://wa.me/919980066922" target="_blank" rel="noreferrer" aria-label="Chat with us on WhatsApp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.92C21.96 6.45 17.5 2 12.04 2Zm5.83 14.19c-.25.7-1.23 1.28-2 1.44-.55.11-1.26.2-3.66-.79-2.98-1.23-4.9-4.24-5.05-4.44-.15-.2-1.2-1.6-1.2-3.05 0-1.46.75-2.17 1.03-2.46.25-.27.61-.4.94-.4h.34c.29 0 .49 0 .7.5.25.6.85 2.06.92 2.21.07.15.12.32.02.52-.09.2-.14.33-.28.5-.14.17-.29.38-.42.51-.14.14-.28.29-.13.57.15.28.66 1.09 1.42 1.77 1 .87 1.83 1.15 2.11 1.28.28.13.44.11.6-.07.17-.17.72-.83.91-1.12.19-.28.38-.24.63-.14.26.09 1.63.77 1.9.91.28.14.46.21.53.33.07.12.07.7-.18 1.4Z"/></svg>
+      </a>
+      <a href="#lead-form" class="btn-primary">Claim Now</a>
+    </div>
+  </div>
+
+  <script>
+    // FAQ accordion
+    document.querySelectorAll(".faq-item").forEach(function (item) {
+      var btn = item.querySelector(".faq-q");
+      btn.addEventListener("click", function () {
+        var wasOpen = item.classList.contains("open");
+        document.querySelectorAll(".faq-item.open").forEach(function (o) { o.classList.remove("open"); });
+        if (!wasOpen) item.classList.add("open");
+      });
+    });
+
+    // Lead form -> WhatsApp
+    var STUDIO_WHATSAPP = "919980066922";
+    var form = document.getElementById("lead-form");
+    var submitBtn = document.getElementById("lead-submit");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var data = new FormData(form);
+      var name = String(data.get("name") || "").trim();
+      var phone = String(data.get("phone") || "").trim();
+      var email = String(data.get("email") || "").trim();
+      var lines = [
+        "Hi Pragalbha Yoga, I'd like to claim my free trial class.",
+        "Name: " + name,
+        "Phone: " + phone,
+      ];
+      if (email) lines.push("Email: " + email);
+      var url = "https://wa.me/" + STUDIO_WHATSAPP + "?text=" + encodeURIComponent(lines.join("\n"));
+      window.open(url, "_blank", "noreferrer");
+      submitBtn.textContent = "Opened on WhatsApp — send to confirm";
+      form.reset();
+    });
+  </script>
+</body>
+</html>
