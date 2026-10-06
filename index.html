@@ -208,6 +208,12 @@ h1,h2,h3{font-family:'Gloock',serif; font-weight:400; color:var(--ink);}
   .gallery-grid{ margin:0; padding:0; overflow:visible; display:grid; grid-template-columns:repeat(3,1fr); }
   .media-slot{ flex:none; }
 }
+.hp{ position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
+.form-status{ font-size:14px; line-height:1.5; text-align:center; margin-top:14px; min-height:0; }
+.form-status.ok{ color:var(--sage-deep); font-weight:600; }
+.form-status.err{ color:var(--rust-deep); }
+.btn[disabled]{ opacity:0.6; cursor:default; }
+.field input.invalid{ border-color:var(--rust-deep); }
 </style>
 </head>
 <body>
@@ -266,8 +272,8 @@ h1,h2,h3{font-family:'Gloock',serif; font-weight:400; color:var(--ink);}
          <video src="your-video.mp4" poster="poster.jpg" controls playsinline preload="metadata"></video>
          or <img src="photo.jpg" alt=""> -->
     <div class="gallery-grid">
-      <div class="media-slot" data-slot="1"><div class="play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><div class="cap">Video coming soon</div></div>
-      <div class="media-slot" data-slot="2"><div class="play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><div class="cap">Video coming soon</div></div>
+      <div class="media-slot" data-slot="1"><img src="assets/gallery-1.jpg" alt="Aerial yoga practice at Pragalbha" loading="lazy"></div>
+      <div class="media-slot" data-slot="2"><img src="assets/gallery-2.jpg" alt="Aerial yoga practice at Pragalbha" loading="lazy"></div>
       <div class="media-slot" data-slot="3"><div class="play"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><div class="cap">Video coming soon</div></div>
     </div>
   </div>
@@ -320,7 +326,9 @@ h1,h2,h3{font-family:'Gloock',serif; font-weight:400; color:var(--ink);}
             <label for="femail">Email</label>
             <input id="femail" type="email" placeholder="you@email.com" autocomplete="email">
           </div>
+          <div class="hp" aria-hidden="true"><label>Company<input id="fcompany" type="text" tabindex="-1" autocomplete="off"></label></div>
           <button class="btn btn-primary" id="submitBtn" style="margin-top:6px;">Confirm My Registration</button>
+          <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
         </div>
         <div class="ask-row">
           <p>Got questions first?</p>
@@ -367,16 +375,49 @@ document.querySelectorAll('a[href="#wa"]').forEach(a => {
   a.href = buildWaLink("Hi! I have a question about the Pragalbha Yoga live master class.");
 });
 
-// Form submit -> WhatsApp deep link with prefilled details
-document.getElementById('submitBtn').addEventListener('click', () => {
+// ===== Registration -> Google Sheet (via Apps Script web app; see README.md) =====
+const SHEET_URL = ""; // paste the Apps Script "Web app" URL (ends in /exec)
+
+const submitBtn = document.getElementById('submitBtn');
+const statusEl = document.getElementById('formStatus');
+const fields = { name: 'fname', phone: 'fphone', email: 'femail' };
+
+function setStatus(msg, kind){ statusEl.textContent = msg; statusEl.className = 'form-status ' + (kind || ''); }
+
+submitBtn.addEventListener('click', async () => {
   const name = document.getElementById('fname').value.trim();
   const phone = document.getElementById('fphone').value.trim();
   const email = document.getElementById('femail').value.trim();
-  let msg = "Hi! I'd like to register for the Pragalbha Yoga live master class.\n";
-  msg += "Name: " + (name || '-') + "\n";
-  msg += "Phone: " + (phone || '-') + "\n";
-  msg += "Email: " + (email || '-');
-  window.open(buildWaLink(msg), '_blank');
+  Object.values(fields).forEach(id => document.getElementById(id).classList.remove('invalid'));
+
+  const phoneDigits = phone.replace(/\D/g, '');
+  if (!name || phoneDigits.length < 10 || (email && !/^\S+@\S+\.\S+$/.test(email))) {
+    if (!name) document.getElementById('fname').classList.add('invalid');
+    if (phoneDigits.length < 10) document.getElementById('fphone').classList.add('invalid');
+    if (email && !/^\S+@\S+\.\S+$/.test(email)) document.getElementById('femail').classList.add('invalid');
+    setStatus('Please enter your name and a valid phone number.', 'err');
+    return;
+  }
+  if (!SHEET_URL) { setStatus('Registration is not connected yet. Please try again shortly.', 'err'); console.warn('SHEET_URL is empty — see README.md'); return; }
+
+  submitBtn.disabled = true; setStatus('Saving your spot…');
+  const body = new URLSearchParams({
+    name, phone, email,
+    company: document.getElementById('fcompany').value, // honeypot
+    page: location.href,
+    source: new URLSearchParams(location.search).get('utm_source') || ''
+  });
+  try {
+    // no-cors: the response is opaque, but the row is written. A network failure still throws.
+    await fetch(SHEET_URL, { method: 'POST', mode: 'no-cors', body });
+    setStatus("You're registered! We'll contact you with the details shortly.", 'ok');
+    submitBtn.textContent = 'Registered ✓';
+    if (window.fbq) fbq('track', 'Lead');
+    Object.values(fields).forEach(id => document.getElementById(id).value = '');
+  } catch (err) {
+    submitBtn.disabled = false;
+    setStatus('Something went wrong. Please try again, or message us on WhatsApp.', 'err');
+  }
 });
 
 // Hide sticky bar once the form is in view (mobile only — desktop hides it via CSS)
